@@ -29,11 +29,19 @@
         <td><?php
         if (isset($_POST["calc"])) {
           $_arr = explode(",", $_POST["value"]);
-          $_tich = $_arr[0];
-          for ($i = 1; $i < count($_arr); $i++)
-            $_tich *= $_arr[$i];
+          $_tich = is_numeric($_arr[0]) ? $_arr[0] : "Du lieu khong phai so";
+          if (is_numeric($_tich))
+            for ($i = 1; $i < count($_arr); $i++) {
+              if (!is_numeric($_arr[$i])) {
+                $_tich = "Du lieu khong phai so";
+                break;
+              }
 
-          echo $_tich;
+              $_tich *= $_arr[$i];
+            }
+
+
+          echo "<input type='text' readonly value='$_tich'>";
         }
         ?></td>
       </tr>
