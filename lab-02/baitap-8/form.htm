@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Enter Your Information</title>
+    <style>
+      body {
+        font-family: Tahoma, Arial, sans-serif;
+      }
+      .panel {
+        width: 720px;
+        margin: 24px auto;
+        padding: 10px 12px;
+        border: 1px solid #9e9e9e;
+      }
+      .legend {
+        font-weight: 700;
+        font-size: 18px;
+        margin-bottom: 8px;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      td {
+        padding: 6px 8px;
+        vertical-align: top;
+      }
+      .label {
+        width: 110px;
+        color: #333;
+      }
+      input[type="text"],
+      select,
+      textarea {
+        width: 320px;
+        padding: 6px;
+        border: 1px solid #9e9e9e;
+        border-radius: 2px;
+        box-sizing: border-box;
+        font-family: inherit;
+      }
+      textarea {
+        width: 520px;
+        height: 120px;
+        resize: vertical;
+      }
+      .inline {
+        display: inline-block;
+        margin-right: 16px;
+      }
+      .actions {
+        padding-left: 118px;
+      }
+      button {
+        padding: 5px 12px;
+        border: 1px solid #6c6c6c;
+        border-bottom-color: #3f3f3f;
+        border-right-color: #3f3f3f;
+        background: #e6e6e6;
+        border-radius: 3px;
+        cursor: pointer;
+        margin-right: 8px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="panel">
+      <div class="legend">Enter Your Information</div>
+
+      <form method="get" action="config.php">
+        <table>
+          <tr>
+            <td class="label">Fullname</td>
+            <td><input type="text" value="" name="fullname" /></td>
+          </tr>
+          <tr>
+            <td class="label">Address</td>
+            <td><input type="text" value="" name="address" /></td>
+          </tr>
+          <tr>
+            <td class="label">Phone</td>
+            <td><input type="text" value="" name="phone" /></td>
+          </tr>
+          <tr>
+            <td class="label">Gender</td>
+            <td>
+              <label class="inline"
+                ><input type="radio" name="gender" value="male" checked />
+                Nam</label
+              >
+              <label class="inline"
+                ><input type="radio" name="gender" value="female" /> Nữ</label
+              >
+            </td>
+          </tr>
+          <tr>
+            <td class="label">Country</td>
+            <td>
+              <select name="country">
+                <option>Việt Nam</option>
+                <option>United States</option>
+                <option>Japan</option>
+                <option>France</option>
+                <option>Singapore</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td class="label">Study</td>
+            <td>
+              <label class="inline"
+                ><input type="checkbox" name="study[]" value="php_mysql" /> PHP
+                &amp; MySQL</label
+              >
+              <label class="inline"
+                ><input type="checkbox" name="study[]" value="asp_net" />
+                ASP.NET</label
+              >
+              <label class="inline"
+                ><input type="checkbox" name="study[]" value="ccna" />
+                CCNA</label
+              >
+              <label class="inline"
+                ><input type="checkbox" name="study[]" value="security_plus" />
+                Security+</label
+              >
+            </td>
+          </tr>
+          <tr>
+            <td class="label">Note</td>
+            <td>
+              <textarea name="note"></textarea>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td class="actions">
+              <button type="submit">Gửi</button>
+              <button type="reset">Hủy</button>
+            </td>
+          </tr>
+        </table>
+      </form>
+    </div>
+  </body>
+</html>
